@@ -3,7 +3,7 @@
 #/ Usage:
 #/   ./explainshell.sh '<command>'
 #/
-#/ Attention! Please use single-quote '' to quote <command>
+#/ Attention! Please use single quote '' to quote <command>
 
 usage() { grep '^#/' "$0" | cut -c4- ; exit 0 ; }
 (expr "$1" : "--help" || expr "$1" : "-h") > /dev/null && usage
