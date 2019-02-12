@@ -40,6 +40,6 @@ _URL="https://explainshell.com/explain?cmd=$_CMD"
 
 echo "URL: $_URL"
 
-result=$($_CURL -sS "$_URL" | $_HXNORMALIZE -x | $_HXSELECT -c '.help-box', '.push' -s '\n' | sed -E 's/<(\/)?[uib]>//g')
+result=$($_CURL -sS "$_URL" | $_HXNORMALIZE -x | $_HXSELECT -c -s '\n' '.help-box', '.push' | sed -E 's/<(\/)?[uib]>//g')
 
 python3 -c "import html,sys; print(html.unescape(sys.argv[1]))" "$result"
